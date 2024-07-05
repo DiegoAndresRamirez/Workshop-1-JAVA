@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Pruebas {
@@ -278,56 +281,58 @@ public class Pruebas {
 //            case "enero":
 //                if(diaUsuario >= 20 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Acuario");
-//                }else {
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Capricornio");
+//                }else{
+//                    System.out.println("dia invalido");
 //                }
 //                break;
 //            case "febrero":
 //                if(diaUsuario >= 19 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Piscis");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Acuario");
 //                }
 //                break;
 //            case "marzo":
 //                if(diaUsuario >= 21 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Aries");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Piscis");
 //                }
 //                break;
 //            case "abril":
 //                if(diaUsuario >= 20 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Tauro");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Aries");
 //                }
 //                break;
 //            case "mayo":
 //                if(diaUsuario >= 21 && diaUsuario <= 31 ){
 //                    System.out.println("Tu horoscopo es Geminis");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Tauro");
 //                }
 //                break;
 //            case "junio":
 //                if(diaUsuario >= 21 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Cancer");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Geminis");
 //                }
 //                break;
 //            case "julio":
 //                if(diaUsuario >= 23 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Leo");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Cancer");
 //                }
 //                break;
 //            case "agosto":
 //                if(diaUsuario >= 23 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Virgo");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Leo");
 //                }
 //                break;
@@ -341,21 +346,21 @@ public class Pruebas {
 //            case "octubre":
 //                if(diaUsuario >= 23 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Escorpio");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Libra");
 //                }
 //                break;
 //            case "noviembre":
 //                if(diaUsuario >= 22 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Sagitario");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Escorpio");
 //                }
 //                break;
 //            case "diciembre":
 //                if(diaUsuario >= 22 && diaUsuario <= 31){
 //                    System.out.println("Tu horoscopo es Capricornio");
-//                }else{
+//                }else if(diaUsuario <=31){
 //                    System.out.println("Tu horoscopo es Sagitario");
 //                }
 //                break;
@@ -428,7 +433,269 @@ public class Pruebas {
 //        }else{
 //            System.out.println("numero no valido");
 //        }
+
+//        Ejercicio 16: Contraseña segura
+//        Crea un programa que valide si una contraseña es segura o no, que
+//        responda con un booleano. (Una contraseña segura debe contener
+//        mínimo 8 caracteres con al menos 1 mayúscula, 1 minúscula y 1
+//        carácter espacial)
+//
+//        System.out.println("Bienvenido usuario a tu validador de contraseñas, a continuación ingresa una contraseña:");
+//        Scanner consola = new Scanner(System.in);
+//        String contraseña = consola.nextLine();
+//        boolean contraseñaSegura = false;
+//        // Creo lista con letras mayusculas
+//        List<String> letrasMayusculas = new ArrayList<>();
+//        List<String> letrasMinusculas = new ArrayList<>();
+//        List<String> caracteresEspeciales = new ArrayList<>();
+//
+//        caracteresEspeciales.add("!");
+//        caracteresEspeciales.add("@");
+//        caracteresEspeciales.add("#");
+//        caracteresEspeciales.add("$");
+//        caracteresEspeciales.add("%");
+//        caracteresEspeciales.add("^");
+//        caracteresEspeciales.add("&");
+//        caracteresEspeciales.add("*");
+//        caracteresEspeciales.add("(");
+//        caracteresEspeciales.add(")");
+//        caracteresEspeciales.add("-");
+//        caracteresEspeciales.add("_");
+//        caracteresEspeciales.add("+");
+//        caracteresEspeciales.add("=");
+//
+//        if (contraseña.length() > 8) {
+//            for (char c = 'A'; c <= 'Z'; c++) {
+//                letrasMayusculas.add(String.valueOf(c));
+//            }
+//            for (char c = 'a'; c <= 'z'; c++) {
+//                letrasMinusculas.add(String.valueOf(c));
+//            }
+//            boolean contieneMayuscula = false;
+//            boolean contieneMinuscula = false;
+//            boolean contieneCaracteres = false;
+//
+//            for (String letraMayuscula : letrasMayusculas){
+//                if(contraseña.contains(letraMayuscula)){
+//                    contieneMayuscula = true;
+//                    break;
+//                }
+//            }
+//            for (String letraMinuscula : letrasMinusculas){
+//                if(contraseña.contains(letraMinuscula)){
+//                    contieneMinuscula = true;
+//                    break;
+//                }
+//            }
+//            for (String caracter : caracteresEspeciales){
+//                if(contraseña.contains(caracter)){
+//                    contieneCaracteres = true;
+//                    break;
+//                }
+//            }
+//
+//            if(contieneMayuscula && contieneMinuscula && contieneCaracteres){
+//                contraseñaSegura = true;
+//            }
+//            if(contraseñaSegura){
+//                System.out.println("¡Contraseña segura!");
+//            }else {
+//                System.out.println("Contraseña poco segura");
+//            }
+//        } else {
+//            System.out.println("minimo 8 caracteres");
+//        }
+
+//        Ejercicio 17: Identificador de carácter
+//        Crea un programa que pida al usuario un carácter e imprima en
+//        consola si es una consonante, vocal o carácter especial.
+
+//        String consonantes = "bcdfghjkmnlpqrstvwxyz";
+//        String vocales = "aeiou";
+//        String caracteres = "!¡@/()[]{},.;:_-'";
+//        System.out.println("Bienvenido usuario, a continuacion ingresa cualquier caracter:  ");
+//        Scanner consola = new Scanner(System.in);
+//        String caracterUsuario = consola.nextLine();
+//        boolean esVocal = false;
+//        boolean esConsonante = false;
+//        boolean esCaracter = false;
+//        if (vocales.contains(caracterUsuario)){
+//            esVocal = true;
+//            System.out.println("Es vocal!");
+//        }
+//        if (consonantes.contains(caracterUsuario)){
+//            esConsonante = true;
+//            System.out.println("Es consonante!");
+//        }
+//        if (caracteres.contains(caracterUsuario)){
+//            esCaracter = true;
+//            System.out.println("Es caracter!");
+//        }
+
+//        Ejercicio 18: Juego de piedra, papel o tijera:
+//        Crear un programa que simule el juego de piedra, papel o tijera
+//        contra el usuario. Permitir al usuario elegir entre piedra, papel o
+//        tijera. Determinar el ganador del juego y mostrar el resultado.
+
+//        System.out.println("Bienvenido usuario a el juego de pidra, papel, y tijeras, a continuacion ingresa tu opcion:\n\n1: piedra\n2: papel\n3: tijeras");
+//        Scanner consola = new Scanner(System.in);
+//        String decision = consola.nextLine();
+//        //utilizo la libreria random
+//        Random random = new Random();
+//        int numeroRandom = random.nextInt(3);
+//        String computadora;
+//        if(numeroRandom ==0){
+//            computadora = "piedra";
+//        }else if(numeroRandom == 1){
+//            computadora = "papel";
+//        }else {
+//            computadora = "tijeras";
+//        }
+//        switch (decision){
+//            case "piedra":
+//                if(computadora.equalsIgnoreCase("piedra")){
+//                    System.out.println("Empate");
+//                }else if(computadora.equalsIgnoreCase("papel")){
+//                    System.out.println("Perdiste");
+//                }else {
+//                    System.out.println("Ganaste");
+//                }
+//                break;
+//            case "papel":
+//                if(computadora.equalsIgnoreCase("papel")){
+//                    System.out.println("Empate");
+//                }else if(computadora.equalsIgnoreCase("piedra")){
+//                    System.out.println("Ganaste");
+//                }else {
+//                    System.out.println("Perdiste");
+//                }
+//                break;
+//            case "tijeras":
+//                if(computadora.equalsIgnoreCase("tijeras")){
+//                    System.out.println("Empate");
+//                }else if(computadora.equalsIgnoreCase("papel")){
+//                    System.out.println("Ganaste");
+//                }else {
+//                    System.out.println("Perdiste");
+//                }
+//                break;
+//            default:
+//                System.out.println("Elige un caracter valido");
+//        }
+
+//        Ejercicio 19: Calculadora de edad:
+//        Crea un programa que solicite la fecha de nacimiento al usuario (año,
+//                mes y día). Calcule la edad e imprima su edad y si es mayor de edad o
+//        no.
+
+//        System.out.println("Biienvenido usuario, a continuacion ingresaras tu año de nacimiento:  ");
+//        Scanner consola = new Scanner(System.in);
+//        int añoUsuario = consola.nextInt();
+//        System.out.println("Ingresa tu mes de nacimiento");
+//        int mesUsuario = consola.nextInt();
+//        System.out.println("Ingresa tu dia de nacimiento");
+//        int diaUsuario = consola.nextInt();
+//        int añoActual = 2024;
+//        int mesActual = 7;
+//        int diaActual = 4;
+//        float operacionEdad = añoActual-añoUsuario;
+//        if(mesUsuario >= mesActual && diaUsuario >= diaActual){
+//            operacionEdad-=1;
+//            if(operacionEdad<=17){
+//                System.out.println("Tienes "+ operacionEdad + " años, eres menor de edad");
+//            }else{
+//                System.out.println("Tienes "+ operacionEdad + " años, eres mayor de edad");
+//            }
+//        }else{
+//            if(operacionEdad<= 17){
+//                System.out.println("Tienes "+ operacionEdad + " años, eres menor de edad");
+//            }else{
+//                System.out.println("Tienes "+ operacionEdad + " años, eres mayor de edad");
+//            }
+//        }
+
+//        Ejercicio 20: Cifrado César:
+//        Escribe un método que cifre y descifre un mensaje utilizando el
+//        cifrado César con un desplazamiento dado.
+
+//        System.out.println("Bienvenido usuario, a continuación ingresa un numero entre el 1 y el 10");
+//        Scanner consola = new Scanner(System.in);
+//        int desplazamiento = consola.nextInt();
+//        consola.nextLine();
+//
+//        System.out.println("Ingresa el mensaje a cifrar: ");
+//        String mensaje = consola.nextLine();
+//
+//        String alfabeto = "abcdefghijklmnñopqrstuvwxyz";
+//        String mensajeCifrado = "";
+//
+//        for (int i = 0; i < mensaje.length(); i++) {
+//            char c = mensaje.charAt(i);
+//            if (alfabeto.indexOf(c) != -1) {
+//                int indice = alfabeto.indexOf(c);
+//                int nuevoIndice = (indice + desplazamiento) % alfabeto.length();
+//                mensajeCifrado += alfabeto.charAt(nuevoIndice);
+//            } else {
+//                mensajeCifrado += c;
+//            }
+//        }
+//
+//        System.out.println("Mensaje cifrado " + mensajeCifrado);
+//
+//        // Descifrar el mensaje
+//        String mensajeDescifrado = "";
+//        for (int i = 0; i < mensajeCifrado.length(); i++) {
+//            char c = mensajeCifrado.charAt(i);
+//            if (alfabeto.indexOf(c) != -1) {
+//                int indice = alfabeto.indexOf(c);
+//                int nuevoIndice = (indice - desplazamiento) % alfabeto.length();
+//                if (nuevoIndice < 0) {
+//                    nuevoIndice += alfabeto.length();
+//                }
+//                mensajeDescifrado += alfabeto.charAt(nuevoIndice);
+//            } else {
+//                mensajeDescifrado += c;
+//            }
+//        }
+//
+//        System.out.println("Mensaje descifrado  " + mensajeDescifrado);
+
+//        System.out.println("Bienvenido usuario, a continuacion ingresa el alto de el rectangulo:  ");
+//        Scanner consola = new Scanner(System.in);
+//        float alturaRectangulo = Float.parseFloat(consola.nextLine());
+//        System.out.println("Ingressa el ancho del rectangulo:  ");
+//        float anchoRectangulo =  Float.parseFloat(consola.nextLine());
+//        float areaRectangulo = alturaRectangulo*anchoRectangulo;
+//        float perimetroRectangulo = (alturaRectangulo+anchoRectangulo)*2;
+//        System.out.println("Perimetro: "+ perimetroRectangulo);
+//        System.out.println("Area: "+ areaRectangulo);
+
+//        System.out.println("Bienvenido usuario, a continuacion proporciona un numero cualquiera:  ");
+//        Scanner consola = new Scanner(System.in);
+//        float numero1 = Float.parseFloat(consola.nextLine());
+//        System.out.println("Ingresa el segundo numero:  ");
+//        float numero2 = Float.parseFloat(consola.nextLine());
+//        if(numero1>numero2){
+//            System.out.println("El numero mayor es: " + numero1);
+//        }else{
+//            System.out.println("El numero mayor es: " + numero2);
+//        }
+
+//        System.out.println("Bienvenido usuario, a continuacion ingresa un numero entre el 0 y el 10:  ");
+//        Scanner consola = new Scanner(System.in);
+//        int numeroUsuario = Integer.parseInt(consola.nextLine());
+//        if(numeroUsuario <=10 && numeroUsuario >=9){
+//            System.out.println("A");
+//        }else if(numeroUsuario <=9 && numeroUsuario >=8){
+//            System.out.println("B");
+//        }else if(numeroUsuario <=8 && numeroUsuario >=7){
+//            System.out.println("C");
+//        }else if(numeroUsuario <=7 && numeroUsuario >=6){
+//            System.out.println("D");
+//        }else if (numeroUsuario <=6 && numeroUsuario >=0){
+//            System.out.println("F");
+//        }
+
     }
 }
-
-//thanks...
+//thanks
